@@ -1,11 +1,11 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
-(load-theme 'doom-one-light t)
+(load-theme 'doom-material t)
 
 (when (display-graphic-p)
   (setq user-font
         (cond
-         ((find-font (font-spec :name  "OperatorMono Nerd Font")) "OperatorMono Nerd Font")
+         ((find-font (font-spec :name  "PT Mono")) "Pt Mono")
          ((find-font (font-spec :name  "Droid Sans Mono")) "Droid Sans Mono")
          ((find-font (font-spec :name  "Droid Sans Fallback")) "Droid Sans Fallback")))
   (cond (IS-MAC
