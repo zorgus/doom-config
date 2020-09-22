@@ -8,15 +8,21 @@
 ;; ORG
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-directory (expand-file-name "~/org-notes")
-      org-agenda-files (list org-directory)
-      org-ellipsis " ▼ "
-      org-babel-python-command "python3"
-      ;; The standard unicode characters are usually misaligned depending on the
-      ;; font. This bugs me. Markdown #-marks for headlines are more elegant.
-      org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
+(after! org
+  (setq org-directory (expand-file-name "~/org-notes")
 
-      org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)")))
+        org-agenda-files (list org-directory)
+
+        org-ellipsis " ▼ "
+
+        org-babel-python-command "python3"
+
+        org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
+
+        org-log-done 'time
+
+        org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)")))
+  )
 
 (after! org
   (setq org-capture-templates
@@ -39,6 +45,28 @@
           ("pc" "Project changelog" entry ; {project-root}/changelog.org
            (file+headline +org-capture-project-notes-file "Unreleased")
            "* TODO %?\n%i" :prepend t :kill-buffer t)))
+
+  (setq org-agenda-custom-commands
+        '(
+          ("n" "Agenda and all TODOs"
+           ((agenda "")
+            (alltodo "")))
+          ("g" . "GTD contexts >>>>")
+          ("go" "Office" tags-todo "@office"
+           ((org-agenda-view-columns-initially t)))
+          ("gh" "Home" tags-todo "@home"
+           ((org-agenda-view-columns-initially t)))
+          ("gr" "Reading" tags-todo "reading"
+           ((org-agenda-view-columns-initially t)))
+          ("G" "GTD Block Agenda"
+           ((tags-todo "@office")
+            (tags-todo "@home"))
+           ((org-agenda-view-columns-initially t))
+           ("~/next-actions.html"))
+          ("i" "Inbox" alltodo ""
+           ((org-agenda-files '("~/gtd/inbox.org")))
+           )
+          ))
 
   (setq org-log-into-drawer "LOGBOOK")
 
