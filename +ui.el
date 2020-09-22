@@ -1,6 +1,6 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
-(load-theme 'doom-material t)
+(load-theme 'doom-one-light t)
 
 (when (display-graphic-p)
   (setq user-font
