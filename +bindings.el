@@ -12,7 +12,7 @@
  ;; overrides other minor mode keymaps (just for non-evil)
  (:map override ;; general-override-mode-map
   "M-q"   (if (daemonp) #'delete-frame #'save-buffers-kill-terminal)
-  "M-p"   #'+ivy/projectile-find-file
+  ;; "M-p"   #'+ivy/projectile-find-file
   "M-y"   #'helm-show-kill-ring
   "C-h m" #'describe-mode
   "C-]"   #'yas-expand

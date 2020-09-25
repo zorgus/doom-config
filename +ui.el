@@ -1,6 +1,6 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
-(load-theme 'doom-one-light t)
+(load-theme 'doom-solarized-dark t)
 
 (when (display-graphic-p)
   (setq user-font
@@ -49,7 +49,7 @@
   `(lsp-ui-peek-highlight :foreground "white")
   `(ivy-posframe-border :background ,(doom-color 'blue))
   `(magit-diff-file-heading :background ,(doom-lighten (doom-color 'blue) 0.5))
-  `(magit-diff-file-heading-highlight :background ,(doom-lighten (doom-color 'blue) 0.2))
+  ;; `(magit-diff-file-heading-highlight :background ,(doom-lighten (doom-color 'blue) 0.2))
   '(markdown-header-face-1 :inherit 'org-level-1)
   '(markdown-header-face-2 :inherit 'org-level-2)
   '(markdown-header-face-3 :inherit 'org-level-3)
