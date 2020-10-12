@@ -23,6 +23,13 @@
         '((width . 110)
           (height . 65))))
 
+;; hangul
+(defun set-hangul (&optional frame)
+  "Set Hangul."
+  (set-fontset-font t 'hangul (font-spec :family "D2Coding")))
+(add-hook 'after-init-hook #'set-hangul)
+(add-hook 'after-make-frame-functions #'set-hangul)
+
 (after! doom-modeline
   (setq doom-modeline-buffer-file-name-style 'relative-from-project
         doom-modeline-major-mode-icon t
