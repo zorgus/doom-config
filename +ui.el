@@ -13,7 +13,7 @@
                doom-big-font (font-spec :family user-font :size 20)
                doom-modeline-height 32))
         (IS-LINUX
-         (setq resolution-factor (eval (/ (x-display-pixel-height) 1080.0)))
+         (setq resolution-factor (eval (/ (x-display-pixel-height) 1792.0)))
          (setq doom-font (font-spec :family user-font :size (eval (round (* 14 resolution-factor))))
                doom-big-font (font-spec :family user-font :size (eval (round (* 20 resolution-factor))))
                doom-modeline-height (eval (round (* 20 resolution-factor))))))
