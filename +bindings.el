@@ -64,12 +64,12 @@
 
 (map!
  ;; Unix text-editing keys & motions
- :gi "C-n" #'next-line
- :gi "C-p" #'previous-line
- :gi "C-b" #'backward-char
- :gi "C-f" #'forward-char
- :gi "C-k" #'kill-line
- :gi "C-d" #'delete-forward-char
+ ;; :gi "C-n" #'next-line
+ ;; :gi "C-p" #'previous-line
+ ;; :gi "C-b" #'backward-char
+ ;; :gi "C-f" #'forward-char
+ ;; :gi "C-k" #'kill-line
+ ;; :gi "C-d" #'delete-forward-char
 
  :v "C-r"   #'+my/evil-quick-replace
  :v "DEL" (kbd "\"_d")
