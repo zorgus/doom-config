@@ -1,8 +1,7 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
-(load-theme 'doom-one-light t)
-
 (when (display-graphic-p)
+  (load-theme 'doom-one-light t)
   (setq-default line-spacing 0.25)
   (setq user-font
         (cond
