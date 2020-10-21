@@ -1,7 +1,7 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
 (when (display-graphic-p)
-  (load-theme 'doom-one-light t)
+  (load-theme 'doom-city-lights t)
   (setq-default line-spacing 0.25)
   (setq user-font
         (cond
@@ -82,7 +82,7 @@
   `(ein:cell-input-prompt :background ,(doom-color 'red) :foreground ,(doom-color 'base0) :bold t))
 
 (custom-theme-set-faces! 'doom-city-lights
-  `(hl-line :background ,(doom-color 'base0))
+  `(hl-line :background ,(doom-darken (doom-color 'blue) 0.6))
   `(magit-diff-file-heading-highlight :foreground ,(doom-color 'base0))
   `(magit-diff-file-heading :foreground ,(doom-color 'base4))
   ;; ediff
