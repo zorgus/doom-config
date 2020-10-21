@@ -28,6 +28,8 @@
           (height . 65))))
 
 ;; hangul
+(set-language-environment "Korean")
+(prefer-coding-system 'utf-8)
 (defun set-hangul (&optional frame)
   "Set Hangul."
   (set-fontset-font t 'hangul (font-spec :family "D2Coding")))
