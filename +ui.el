@@ -46,8 +46,8 @@
 
 (remove-hook 'doom-init-ui-hook #'blink-cursor-mode)
 
-;; disable line-numbers by default
-(setq display-line-numbers-type nil)
+;; enable line-numbers mode
+(display-line-numbers-mode)
 
 (defface breakpoint-enabled '((t)) "Breakpoint face.")
 
