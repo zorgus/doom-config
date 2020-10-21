@@ -1,8 +1,9 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
-(load-theme 'doom-monokai-pro t)
+(load-theme 'doom-one-light t)
 
 (when (display-graphic-p)
+  (setq-default line-spacing 0.25)
   (setq user-font
         (cond
          ((find-font (font-spec :name  "PT Mono")) "PT Mono")
