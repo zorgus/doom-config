@@ -171,8 +171,9 @@
        "o" #'symbol-overlay-put
        "q" #'symbol-overlay-remove-all)
       (:prefix "p"                      ; project
-       "*" (+my/prefix-M-x "projectile-")
-       :desc "Update projectile list" "u" #'update-projectile-known-projects)
+       :desc "prejectile-" "*" (+my/prefix-M-x "projectile-")
+       :desc "Update projectile list" "u" #'update-projectile-known-projects
+       :desc "Regenerate Tags" "G" #'projectile-regenerate-tags)
       (:prefix ("d" . "debug")
        :desc "Start dap debugger" "d" #'+my/dap-start
        "b" #'dap-breakpoint-toggle
