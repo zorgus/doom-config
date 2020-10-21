@@ -1,22 +1,25 @@
 ;;; private/my/+ui.el -*- lexical-binding: t; -*-
 
-(load-theme 'doom-solarized-dark t)
+(load-theme 'doom-monokai-pro t)
 
 (when (display-graphic-p)
   (setq user-font
         (cond
-         ((find-font (font-spec :name  "PT Mono")) "Pt Mono")
+         ((find-font (font-spec :name  "PT Mono")) "PT Mono")
+         ((find-font (font-spec :name  "Fira Code")) "Fira Code")
          ((find-font (font-spec :name  "Droid Sans Mono")) "Droid Sans Mono")
          ((find-font (font-spec :name  "Droid Sans Fallback")) "Droid Sans Fallback")))
   (cond (IS-MAC
          (setq doom-font (font-spec :family user-font :size 14)
                doom-big-font (font-spec :family user-font :size 20)
-               doom-modeline-height 32))
+               doom-modeline-height 32
+               face-font-rescale-alist '(("D2Coding" . 1.1107692307692308))))
         (IS-LINUX
          (setq resolution-factor (eval (/ (x-display-pixel-height) 1792.0)))
          (setq doom-font (font-spec :family user-font :size (eval (round (* 14 resolution-factor))))
                doom-big-font (font-spec :family user-font :size (eval (round (* 20 resolution-factor))))
-               doom-modeline-height (eval (round (* 20 resolution-factor))))))
+               doom-modeline-height (eval (round (* 20 resolution-factor)))
+               face-font-rescale-alist '(("D2Coding" . 1.2107692307692308)))))
 
   ;; set initl screen size
   (setq initial-frame-alist
